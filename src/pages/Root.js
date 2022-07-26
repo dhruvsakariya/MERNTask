@@ -10,8 +10,9 @@ import ContactUs from "../components/ContactUs/App";
 import AboutUs from "../components/AboutUs/App";
 import User from "../components/User/App";
 import Gallary from "../components/Gallary/App";
-import {Login} from "../components/Auth/Login/App";
-import {Register} from "../components/Auth/Register/App";
+import { Login } from "../components/Auth/Login/App";
+import { Register } from "../components/Auth/Register/App";
+import Footer from "../components/Footer/App";
 
 const Root = () => {
   return (
@@ -28,6 +29,7 @@ const Root = () => {
           <Route path="/register" element={<Register />} />
         </Route>
       </Routes>
+      <Footer />
     </>
   );
 };

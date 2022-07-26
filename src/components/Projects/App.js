@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 
-// bootstrap ready template
 
 const Projects = () => {
   return (

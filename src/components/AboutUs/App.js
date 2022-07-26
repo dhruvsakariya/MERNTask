@@ -239,22 +239,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <footer class="bg-light pb-5">
-        <div class="container text-center">
-          <p class="font-italic text-muted mb-0">
-            &copy; Copyrights{" "}
-            <a
-              target={"_blank"}
-              rel="noreferrer"
-              href="https://alitainfotech.com"
-            >
-              {" "}
-              alitainfotech.com{" "}
-            </a>{" "}
-            All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
