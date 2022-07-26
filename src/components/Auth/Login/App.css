@@ -1,0 +1,8 @@
+
+
+.resetLink , .register_link {
+  text-decoration: none;
+}
+.resetLink:hover , .register_link:hover {
+  text-decoration: underline;
+}

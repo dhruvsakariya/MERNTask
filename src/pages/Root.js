@@ -10,6 +10,8 @@ import ContactUs from "../components/ContactUs/App";
 import AboutUs from "../components/AboutUs/App";
 import User from "../components/User/App";
 import Gallary from "../components/Gallary/App";
+import {Login} from "../components/Auth/Login/App";
+import {Register} from "../components/Auth/Register/App";
 
 const Root = () => {
   return (
@@ -18,10 +20,12 @@ const Root = () => {
       <Routes>
         <Route>
           <Route path="/Projects" element={<Projects />} />
-          <Route path="/About-us" element={<ContactUs />} />
-          <Route path="/Contact-us" element={<AboutUs />} />
+          <Route path="/About-us" element={<AboutUs />} />
+          <Route path="/Contact-us" element={<ContactUs />} />
           <Route path="/user/profile" element={<User />} />
           <Route path="/Gallary" element={<Gallary />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Route>
       </Routes>
     </>

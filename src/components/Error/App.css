@@ -1,0 +1,5 @@
+@import url("../../../../root.css");
+
+.toast button.btn-close:focus{
+ box-shadow: none;
+}

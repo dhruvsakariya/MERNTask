@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { homePageState } from "../HomePage/reduxSlice";
 // import { userState } from "../User/reduxSlice";
 // import { logoutUserAsync } from "../auth/Logout/reduxSlice.js";
@@ -11,24 +11,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 // Bootstrap
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Dropdown from "react-bootstrap/Dropdown";
-import Container from "react-bootstrap/Container";
 
 // Icon
-import {
-  BsFillPersonFill,
-  BsSearch,
-  BsFillBellFill,
-  BsFillPeopleFill,
-  BsImages,
-} from "react-icons/bs";
-import { IoIosLogOut, IoMdCalendar } from "react-icons/io";
-import { IoSettingsSharp } from "react-icons/io5";
+import { BsImages } from "react-icons/bs";
+import { IoIosLogOut } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { Icon } from "@iconify/react";
 
@@ -42,7 +32,7 @@ import avatar from "../../assets/img/avatar.jpg";
 
 export default function NavbarComponent() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   //   const { userAvl } = useSelector(userState);
 
   const userAvl = true;
@@ -83,7 +73,7 @@ export default function NavbarComponent() {
                 }}
                 className="  "
               >
-                <Icon icon="fluent:desktop-32-regular" />
+                <Icon icon="fluent:desktop-32-regular" className="me-2" />
                 Home
               </Dropdown.Item>
               <Dropdown.Divider className="p-0 mt-1" />
@@ -95,7 +85,7 @@ export default function NavbarComponent() {
                 }}
                 className="  "
               >
-                <CgProfile /> Profile
+                <CgProfile className="me-2" /> Profile
               </Dropdown.Item>
               <Dropdown.Item
                 href="/"
@@ -104,11 +94,11 @@ export default function NavbarComponent() {
                 }}
                 className="  "
               >
-                <BsImages /> Gallary
+                <BsImages className="me-2" /> Gallary
               </Dropdown.Item>
               <Dropdown.Divider className="p-0 m-0" />
               <Dropdown.Item href="/" onClick={logoutHandler} className="  ">
-                <IoIosLogOut /> Logout
+                <IoIosLogOut className="me-2" /> Logout
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -155,7 +145,7 @@ export default function NavbarComponent() {
     //   <ActionMenu />
     // </Navbar>
     <>
-      <Navbar key={"sm"} bg="light" expand={"sm"} className="mb-3">
+      <Navbar key={"sm"} bg="light" expand={"sm"} className="w">
         <Navbar.Brand
           className="ms-0  brandLogo"
           onClick={(e) => {
