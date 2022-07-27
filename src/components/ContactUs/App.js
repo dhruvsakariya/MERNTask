@@ -5,38 +5,38 @@ import "./App.css";
 const ContactUs = () => {
   return (
     <div className="contact_us" >
-      <div class="content">
-        <div class="container">
-          <div class="row align-items-stretch no-gutters contact-wrap">
-            <div class="col-md-8 p-0">
-              <div class="form h-100">
+      <div className="content">
+        <div className="container">
+          <div className="row align-items-stretch no-gutters contact-wrap">
+            <div className="col-md-8 p-0">
+              <div className="form h-100">
                 <h3>Send us a message</h3>
                 <form
-                  class="mb-5"
+                  className="mb-5"
                   method="post"
                   id="contactForm"
                   name="contactForm"
                 >
-                  <div class="row">
-                    <div class="col-md-6 form-group mb-5">
-                      <label for="" class="col-form-label">
+                  <div className="row">
+                    <div className="col-md-6 form-group mb-5">
+                      <label for="" className="col-form-label">
                         Name *
                       </label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="name"
                         id="name"
                         placeholder="Your name"
                       />
                     </div>
-                    <div class="col-md-6 form-group mb-5">
-                      <label for="" class="col-form-label">
+                    <div className="col-md-6 form-group mb-5">
+                      <label for="" className="col-form-label">
                         Email *
                       </label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="email"
                         id="email"
                         placeholder="Your email"
@@ -44,26 +44,26 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-md-6 form-group mb-5">
-                      <label for="" class="col-form-label">
+                  <div className="row">
+                    <div className="col-md-6 form-group mb-5">
+                      <label for="" className="col-form-label">
                         Phone
                       </label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="phone"
                         id="phone"
                         placeholder="Phone #"
                       />
                     </div>
-                    <div class="col-md-6 form-group mb-5">
-                      <label for="" class="col-form-label">
+                    <div className="col-md-6 form-group mb-5">
+                      <label for="" className="col-form-label">
                         Company
                       </label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="company"
                         id="company"
                         placeholder="Company  name"
@@ -71,13 +71,13 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-md-12 form-group mb-5">
-                      <label for="message" class="col-form-label">
+                  <div className="row">
+                    <div className="col-md-12 form-group mb-5">
+                      <label for="message" className="col-form-label">
                         Message *
                       </label>
                       <textarea
-                        class="form-control"
+                        className="form-control"
                         name="message"
                         id="message"
                         cols="30"
@@ -86,14 +86,14 @@ const ContactUs = () => {
                       ></textarea>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-12 form-group">
+                  <div className="row">
+                    <div className="col-md-12 form-group">
                       <input
                         type="submit"
                         value="Send Message"
-                        class="btn btn-primary rounded-0 py-2 px-4"
+                        className="btn btn-primary rounded-0 py-2 px-4"
                       />
-                      <span class="submitting"></span>
+                      <span className="submitting"></span>
                     </div>
                   </div>
                 </form>
@@ -104,27 +104,27 @@ const ContactUs = () => {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 p-0">
-              <div class="contact-info h-100">
+            <div className="col-md-4 p-0">
+              <div className="contact-info h-100">
                 <h3>Contact Information</h3>
-                <p class="mb-5">
+                <p className="mb-5">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Molestias, magnam!
                 </p>
-                <ul class="list-unstyled">
-                  <li class="d-flex">
-                    <span class="wrap-icon icon-room mr-3"></span>
-                    <span class="text">
+                <ul className="list-unstyled">
+                  <li className="d-flex">
+                    <span className="wrap-icon icon-room mr-3"></span>
+                    <span className="text">
                       9757 Aspen Lane South Richmond Hill, NY 11419
                     </span>
                   </li>
-                  <li class="d-flex">
-                    <span class="wrap-icon icon-phone mr-3"></span>
-                    <span class="text">+1 (291) 939 9321</span>
+                  <li className="d-flex">
+                    <span className="wrap-icon icon-phone mr-3"></span>
+                    <span className="text">+1 (291) 939 9321</span>
                   </li>
-                  <li class="d-flex">
-                    <span class="wrap-icon icon-envelope mr-3"></span>
-                    <span class="text">info@mywebsite.com</span>
+                  <li className="d-flex">
+                    <span className="wrap-icon icon-envelope mr-3"></span>
+                    <span className="text">info@mywebsite.com</span>
                   </li>
                 </ul>
               </div>

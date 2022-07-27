@@ -34,7 +34,6 @@ export function Register() {
     password,
     rememberMe,
     loading,
-    role,
   } = useSelector(loginState);
   // assigning
   const dispatch = useDispatch();
@@ -59,7 +58,6 @@ export function Register() {
           lastName,
           email,
           password,
-          role,
           navigate,
         })
       );

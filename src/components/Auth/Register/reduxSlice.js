@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { registerUser, assignRole } from "./reduxAPI";
+import { registerUser, createProfile } from "./reduxAPI";
 import { pushErrorNotification } from "../../Error/reduxSlice";
 import { setUserAvl } from "../../User/reduxSlice";
 import { loginUser, rememberAfterLogin } from "../Login/reduxAPI";
@@ -8,7 +8,6 @@ import { loginUser, rememberAfterLogin } from "../Login/reduxAPI";
 import { Icon } from "@iconify/react";
 
 const initialState = {
-  role: "attendee",
   firstName: "",
   lastName: "",
   email: "",
@@ -27,39 +26,30 @@ const initialState = {
 export const registerUserAsync = createAsyncThunk(
   "register/createUser",
   async (
-    { email, password, navigate, firstName, lastName, role },
+    { email, password, navigate, firstName, lastName },
     { dispatch, getState, rejectWithValue }
   ) => {
     try {
-      const { rememberMe } = getState().register;
       // create user
       const userCredential = await registerUser(email, password);
 
       // assigning attendee role
-      // const { data } =
-      await assignRole(
-        userCredential.user.uid,
-        firstName,
-        lastName,
-        email,
-        rememberMe,
-        role
-      );
+      await createProfile(firstName, lastName, email);
 
       // Relogin
 
-      const userCredentialLogin = await loginUser(email, password);
-      const user = userCredentialLogin.user;
-      if (user) {
-        dispatch(setUserAvl({ userAvl: true }));
-      }
+      // const userCredentialLogin = await loginUser(email, password);
+      // const user = userCredentialLogin.user;
+      // if (user) {
+      //   dispatch(setUserAvl({ userAvl: true }));
+      // }
 
-      const { data } = await rememberAfterLogin(
-        userCredentialLogin.user.uid,
-        rememberMe
-      );
+      // const { data } = await rememberAfterLogin(
+      //   userCredentialLogin.user.uid,
+      //   rememberMe
+      // );
 
-      localStorage.setItem("preEventToken", data.token);
+      // localStorage.setItem("preEventToken", data.token);
 
       navigate("/", { replace: true });
     } catch (error) {
@@ -110,13 +100,7 @@ export const registerSlice = createSlice({
     toggleRememberMe: (state, action) => {
       state.rememberMe = !state.rememberMe;
     },
-    toggleRole: (state, action) => {
-      if (state.role === "attendee") {
-        state.role = "subscriber";
-      } else if (state.role === "subscriber") {
-        state.role = "attendee";
-      }
-    },
+
     clearRegisterInputs: (state, action) => {
       state.role = "attendee";
       state.firstName = "";
@@ -151,7 +135,7 @@ export const {
   setLastName,
   setConfirmPassword,
   toggleRememberMe,
-  toggleRole,
+
   clearRegisterInputs,
 } = registerSlice.actions;
 

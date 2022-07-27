@@ -60,6 +60,7 @@ export default function NavbarComponent() {
               <img
                 src={avatar}
                 width="35"
+                draggable="false"
                 height="35"
                 className="d-inline-block align-top m-1"
                 alt="React Bootstrap logo"

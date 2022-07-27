@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="bg-light py-4">
-      <div class="container text-center">
-        <p class="font-italic text-muted mb-0">
+    <footer className="bg-light py-4">
+      <div className="container text-center">
+        <p className="font-italic text-muted mb-0">
           &copy; Copyrights{" "}
           <a
             target={"_blank"}
