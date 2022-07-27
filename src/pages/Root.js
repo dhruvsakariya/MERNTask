@@ -13,6 +13,7 @@ import Gallary from "../components/Gallary/App";
 import { Login } from "../components/Auth/Login/App";
 import { Register } from "../components/Auth/Register/App";
 import Footer from "../components/Footer/App";
+import HomePage from "../components/HomePage/App";
 
 const Root = () => {
   return (
@@ -27,6 +28,7 @@ const Root = () => {
           <Route path="/Gallary" element={<Gallary />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/" element={<HomePage />} />
         </Route>
       </Routes>
       <Footer />
