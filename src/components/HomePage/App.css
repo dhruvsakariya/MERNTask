@@ -5,3 +5,16 @@
 .homePageWrapper {
   background-color: #f8f9fa;
 }
+
+.Technologoy {
+  color: gray;
+  letter-spacing: 1px;
+  font-size: large;
+  font-family: cursive;
+}
+
+.shadow_small {
+  box-shadow: 0px 0px 4px #cfcfcf;
+  border-radius: 8px;
+  text-align: center;
+}
