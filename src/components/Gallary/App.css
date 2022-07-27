@@ -13,6 +13,11 @@
 /*--------------------------------------------------------------
   # Sections & Section Header
   --------------------------------------------------------------*/
+
+  .homePageWrapper {
+    background-color: #f8f9fa;
+  }
+  
   .section-header {
     padding-bottom: 40px;
   }
@@ -332,7 +337,6 @@
     }
   }
   
-  
   /*--------------------------------------------------------------
     # About Section
     --------------------------------------------------------------*/
@@ -462,7 +466,7 @@
     # Pricing Section
     --------------------------------------------------------------*/
   .gallery {
-    margin-top: 40px;
+    margin-top: 24px !important;
   }
   
   .gallery .gallery-item {
@@ -800,7 +804,7 @@
     # Contact Section
     --------------------------------------------------------------*/
   .contact .info-item + .info-item {
-    margin-top: 40px;
+    margin-top: 24px;
   }
   
   .contact .info-item i {

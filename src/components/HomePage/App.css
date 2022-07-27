@@ -1,3 +1,7 @@
-.Information_video{
-    box-shadow: 3px 3px 10px #bababa;
+.Information_video {
+  box-shadow: 3px 3px 10px #bababa;
+}
+
+.homePageWrapper {
+  background-color: #f8f9fa;
 }

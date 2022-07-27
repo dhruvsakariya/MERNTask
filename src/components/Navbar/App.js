@@ -145,7 +145,7 @@ export default function NavbarComponent() {
     //   <ActionMenu />
     // </Navbar>
     <>
-      <Navbar key={"sm"} bg="light" expand={"sm"} className="w">
+      <Navbar key={"sm"} bg="light" sticky="top" expand={"sm"} className="w">
         <Navbar.Brand
           className="ms-0  brandLogo"
           onClick={(e) => {

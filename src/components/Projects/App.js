@@ -4,7 +4,7 @@ import "./App.css";
 
 const Projects = () => {
   return (
-    <div>
+    <div className="homePageWrapper"  >  
       <main id="main" data-aos="fade" data-aos-delay="1500">
         <section id="gallery" class="gallery">
           <div class="container-fluid">

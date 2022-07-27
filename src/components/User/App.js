@@ -3,7 +3,7 @@ import React from "react";
 const User = () => {
   return (
     <div>
-      <section style={{ backgroundColor: "#eee" }}>
+      <section style={{ backgroundColor: "#f8f9fa" }}>
         <div class="container py-5">
           <div class="row">
             <div class="col-lg-4">
