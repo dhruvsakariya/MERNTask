@@ -12,3 +12,8 @@
 #userNavigation.border.dropdown-toggle.btn {
   padding: 0px;
 }
+
+a.text-secondary{
+  cursor: pointer !important;
+}
+ 

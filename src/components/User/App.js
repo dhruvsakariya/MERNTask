@@ -45,13 +45,7 @@ const User = () => {
 
                   <div className="d-flex justify-content-center my-3">
                     <button type="button" className="btn btn-primary py-0">
-                      Follow
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary ms-1 py-0"
-                    >
-                      Message
+                      Update Profile
                     </button>
                   </div>
                 </div>

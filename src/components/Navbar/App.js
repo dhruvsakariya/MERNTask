@@ -39,7 +39,7 @@ export default function NavbarComponent() {
     navigate(navigateStr);
   };
 
-  const ActionMenu = () => {
+  const ActionMenu = ({ isAuth }) => {
     if (isAuth) {
       const logoutHandler = (event) => {
         event.preventDefault();
@@ -208,7 +208,7 @@ export default function NavbarComponent() {
             className="me-2"
             aria-controls={`offcanvasNavbar-expand-sm`}
           />
-          <ActionMenu />
+          <ActionMenu isAuth={isAuth} />
         </div>
       </Navbar>
     </>
