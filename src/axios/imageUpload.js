@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:4000/";
+const baseURL = "https://merntaskserve.herokuapp.com/";
 // http://localhost:4000/
 // https://merntaskserve.herokuapp.com/
 const axiosInstance = axios.create({
