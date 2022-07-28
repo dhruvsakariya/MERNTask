@@ -57,7 +57,13 @@ export default function NavbarComponent() {
               id="userNavigation"
             >
               <img
-                src={isAuth ? profileUrl : avatar}
+                src={
+                  isAuth
+                    ? profileUrl
+                      ? profileUrl
+                      : "https://www.svgrepo.com/show/157053/avatar.svg"
+                    : avatar
+                }
                 width="35"
                 draggable="false"
                 height="35"
