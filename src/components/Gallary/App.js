@@ -12,13 +12,13 @@ import {
 
 const Gallary = () => {
   // const [values, setValues] = useState();
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const { images } = useSelector(gallaryState);
+
+  const { images, urls, loading } = useSelector(gallaryState);
   const dispatch = useDispatch();
 
   function onSubmit(e) {
     e.preventDefault();
-    setIsButtonDisabled(true);
+
     // createPostCallback();
     dispatch(uploadImageAsync({ images }));
   }
@@ -61,7 +61,7 @@ const Gallary = () => {
 
             <Button
               type="submit"
-              disabled={isButtonDisabled}
+              disabled={loading}
               className="SubmitButton py-0"
               color="teal"
             >
@@ -75,7 +75,7 @@ const Gallary = () => {
         <section id="gallery" className="gallery">
           <div className="container-fluid">
             <div className="row gy-4 justify-content-center">
-              {/* {images.map((item) => (
+              {urls.map((item) => (
                 <div key={item} className="col-xl-3 col-lg-4 col-md-6">
                   <div className="gallery-item h-100">
                     <img src={item} className="img-fluid" alt="" />
@@ -93,238 +93,7 @@ const Gallary = () => {
                     </div>
                   </div>
                 </div>
-              ))} */}
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 2"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 3"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 4"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 5"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 6"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 7"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 8"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 9"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 10"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 11"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/random/?productivity,city"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/random/?productivity,city"
-                      title="Gallery 12"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>

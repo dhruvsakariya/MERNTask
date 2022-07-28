@@ -3,7 +3,8 @@ import { uploadImages } from "./reduxAPI";
 
 const initialState = {
   loading: false,
-  images: ["alligator"],
+  images: "",
+  urls:[]
 };
 
 export const uploadImageAsync = createAsyncThunk(
@@ -37,7 +38,7 @@ export const gallarySlice = createSlice({
       .addCase(uploadImageAsync.fulfilled, (state, action) => {
         state.loading = false;
         console.log(action.payload);
-        state.images = [...state.images, ...action.payload];
+        state.urls =action.payload;
       })
       .addCase(uploadImageAsync.rejected, (state, action) => {
         state.loading = false;
