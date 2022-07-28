@@ -19,14 +19,10 @@ function App() {
 
       if (TokenBoth) {
         try {
-          // const response = await signInWithCustomToken(TokenBoth);
-          // const user = response.data.userId;
-          // if (user) {
-          //   dispatch(setIsAuth({ isAuth: true }));
-          // }
+          dispatch(setIsAuth({ isAuth: true, token: TokenBoth }));
         } catch (error) {}
       } else {
-        navigate("/login");
+        // navigate("/login");
       }
     };
     autoLogin();

@@ -1,7 +1,5 @@
-
 import axios from "../../../axios/axiosInstance";
 
-const token = localStorage.getItem("loginToken");
 export function registerUser(firstName, lastName, email, password) {
   return axios.put("/user/signup", {
     email,
@@ -64,6 +62,5 @@ export function registerUser(firstName, lastName, email, password) {
         skillRate: "10%",
       },
     ],
-  },
-  { headers: { Authorization: `Bearer ${token}` } });
+  });
 }

@@ -32,7 +32,8 @@ export const getUserAsync = createAsyncThunk(
   "user/getUser",
   async ({ navigate }, { dispatch, getState, rejectWithValue }) => {
     try {
-      const response = await getUserDetails();
+      const tokenRedux = getState().user.token;
+      const response = await getUserDetails(tokenRedux);
 
       return response.data.userProfile;
     } catch (error) {
@@ -45,7 +46,8 @@ export const updateUserAsync = createAsyncThunk(
   "user/updateUser",
   async ({ _ }, { dispatch, getState, rejectWithValue }) => {
     try {
-      const response = await updateUserProfile();
+      const tokenRedux = getState().user.token;
+      const response = await updateUserProfile(tokenRedux);
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -61,6 +63,7 @@ export const userSlice = createSlice({
       state.isAuth = action.payload.isAuth;
 
       if (action.payload.token) {
+        console.log("token ", action.payload.token);
         state.token = action.payload.token;
       }
 

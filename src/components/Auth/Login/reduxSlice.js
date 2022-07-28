@@ -35,6 +35,7 @@ export const loginUserAsync = createAsyncThunk(
       }
 
       localStorage.setItem("loginToken", response.data.token);
+
       navigate("/", { replace: true });
     } catch (error) {
       dispatch(

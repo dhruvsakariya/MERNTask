@@ -14,6 +14,13 @@
   # Sections & Section Header
   --------------------------------------------------------------*/
 
+  .modal_close_btn{
+    z-index: 2;
+  }
+  .full_img{
+    z-index: 1;
+  }
+
   .homePageWrapper {
     background-color: #f8f9fa;
   }

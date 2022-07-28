@@ -4,14 +4,15 @@ import { uploadImages } from "./reduxAPI";
 const initialState = {
   loading: false,
   images: "",
-  urls:[]
+  urls: [],
 };
 
 export const uploadImageAsync = createAsyncThunk(
   "gallary/addImages",
-  async ({ images }, { dispatch, rejectWithValue }) => {
+  async ({ images }, { dispatch, getState, rejectWithValue }) => {
     try {
-      const response = await uploadImages(images);
+      const tokenRedux = getState().user.token;
+      const response = await uploadImages(images, tokenRedux);
 
       return response.data.images;
     } catch (error) {
@@ -38,7 +39,7 @@ export const gallarySlice = createSlice({
       .addCase(uploadImageAsync.fulfilled, (state, action) => {
         state.loading = false;
         console.log(action.payload);
-        state.urls =action.payload;
+        state.urls = action.payload;
       })
       .addCase(uploadImageAsync.rejected, (state, action) => {
         state.loading = false;

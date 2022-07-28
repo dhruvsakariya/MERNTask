@@ -38,20 +38,6 @@ export const registerUserAsync = createAsyncThunk(
         password
       );
 
-      // Relogin
-
-      // const userCredentialLogin = await loginUser(email, password);
-      // const user = userCredentialLogin.user;
-      // if (user) {
-      //   dispatch(setIsAuth({ isAuth: true }));
-      // }
-
-      // const { data } = await rememberAfterLogin(
-      //   userCredentialLogin.user.uid,
-      //   rememberMe
-      // );
-
-      // localStorage.setItem("preEventToken", data.token);
 
       navigate("/login", { replace: true });
     } catch (error) {

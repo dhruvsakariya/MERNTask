@@ -1,14 +1,14 @@
 import axios from "../../axios/axiosInstance";
 const token = localStorage.getItem("loginToken");
 
-export function getUserDetails() {
+export function getUserDetails(tokenRedux) {
   return axios.get("user/profile", {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${tokenRedux||token}` },
   });
 }
 
-export function updateUserProfile() {
+export function updateUserProfile(tokenRedux) {
   return axios.post("user/updateProfile", {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${tokenRedux||token}` },
   });
 }

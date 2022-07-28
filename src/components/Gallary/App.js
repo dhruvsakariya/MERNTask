@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import Modal from "react-bootstrap/Modal";
+import CloseButton from "react-bootstrap/CloseButton";
+import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +13,12 @@ import {
 } from "./reduxSlice";
 
 const Gallary = () => {
+  const [show, setShow] = useState(false);
+  const [currentImage, showcurrentImage] = useState("");
+  function handleShow(breakpoint) {
+    setShow(true);
+  }
+
   const { images, urls, loading } = useSelector(gallaryState);
   const dispatch = useDispatch();
 
@@ -66,7 +74,6 @@ const Gallary = () => {
           </Form.Group>
         </Form>
       </div>
-
       <main id="main" data-aos="fade" data-aos-delay="1500">
         <section id="gallery" className="gallery">
           <div className="container-fluid">
@@ -77,13 +84,23 @@ const Gallary = () => {
                     <img src={item} className="img-fluid" alt="" />
                     <div className="gallery-links d-flex align-items-center justify-content-center">
                       <a
-                        href="https://source.unsplash.com/random/?productivity,city"
+                        href="/"
                         title="Gallery 1"
                         className="glightbox preview-link"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          showcurrentImage(item);
+                          handleShow(true);
+                        }}
                       >
                         <i className="bi bi-arrows-angle-expand"></i>
                       </a>
-                      <a href="gallery-single.html" className="details-link">
+                      <a
+                        href={item}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="details-link"
+                      >
                         <i className="bi bi-link-45deg"></i>
                       </a>
                     </div>
@@ -94,13 +111,24 @@ const Gallary = () => {
           </div>
         </section>
       </main>
-
       <a
         href="/"
         className="scroll-top d-flex align-items-center justify-content-center"
       >
         <i className="bi bi-arrow-up-short"></i>
       </a>
+
+      <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
+        <Modal.Body className="p-0">
+          <div className="bg-white d-flex position-fixed top-0 end-0 mx-4 my-2">
+            <CloseButton
+              className="modal_close_btn"
+              onClick={() => setShow(false)}
+            />
+          </div>
+          <img src={currentImage} className="img-fluid w-100 full_img" alt="" />
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

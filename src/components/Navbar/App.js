@@ -44,7 +44,7 @@ export default function NavbarComponent() {
       const logoutHandler = (event) => {
         event.preventDefault();
         localStorage.removeItem("loginToken");
-        dispatch(setIsAuth({ isAuth: false }));
+        dispatch(setIsAuth({ isAuth: false, token: null }));
         navigate("/login");
       };
       return (
@@ -169,12 +169,12 @@ export default function NavbarComponent() {
           aria-labelledby={`offcanvasNavbarLabel-expand-sm`}
           placement="end"
         >
-          <Offcanvas.Header closeButton>
+          <Offcanvas.Header closeButton className={`${isAuth ? "" : "d-none"}`}>
             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
               Offcanvas
             </Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
+          <Offcanvas.Body className={`${isAuth ? "" : "d-none"}`}>
             <Nav className="justify-content-start flex-grow-1 pe-3">
               <Nav.Link
                 href="/"

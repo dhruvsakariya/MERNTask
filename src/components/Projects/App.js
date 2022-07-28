@@ -1,10 +1,9 @@
 import React from "react";
 import "./App.css";
 
-
 const Projects = () => {
   return (
-    <div className="homePageWrapper"  >  
+    <div className="homePageWrapper py-4">
       <main id="main" data-aos="fade" data-aos-delay="1500">
         <section id="gallery" className="gallery">
           <div className="container-fluid">
@@ -177,95 +176,10 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/400x300"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/400x300"
-                      title="Gallery 9"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/400x300"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/400x300"
-                      title="Gallery 10"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/400x300"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/400x300"
-                      title="Gallery 11"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="gallery-item h-100">
-                  <img
-                    src="https://source.unsplash.com/400x300"
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="gallery-links d-flex align-items-center justify-content-center">
-                    <a
-                      href="https://source.unsplash.com/400x300"
-                      title="Gallery 12"
-                      className="glightbox preview-link"
-                    >
-                      <i className="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="gallery-single.html" className="details-link">
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
       </main>
-
 
       <a
         href="/"
