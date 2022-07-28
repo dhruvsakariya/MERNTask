@@ -1,9 +1,9 @@
 import axios from "../../axios/axiosInstance";
 
-export function getUserDetails(email) {
-  return axios.post("user/profile", { email });
+export function getUserDetails() {
+  return axios.get("user/profile");
 }
 
-export function updateUserProfile(email) {
-  return axios.post("user/updateProfile", { email });
+export function updateUserProfile() {
+  return axios.post("user/updateProfile");
 }

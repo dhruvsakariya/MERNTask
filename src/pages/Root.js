@@ -14,10 +14,12 @@ import { Login } from "../components/Auth/Login/App";
 import { Register } from "../components/Auth/Register/App";
 import Footer from "../components/Footer/App";
 import HomePage from "../components/HomePage/App";
+import {ErrorToast} from "../components/Error/App";
 
 const Root = () => {
   return (
     <>
+      <ErrorToast />
       <NavbarComponent />
       <Routes>
         <Route>

@@ -11,7 +11,7 @@ export function registerUser(email, password) {
   return;
 }
 
-export function createProfile(firstName, lastName, email) {
+export function createProfile(firstName, lastName, email, password) {
   return axios.post("/user/createProfile", {
     email,
     firstName,
@@ -19,6 +19,7 @@ export function createProfile(firstName, lastName, email) {
     mobile: "(000) 000-0000",
     profileUrl: "https://www.w3schools.com/howto/img_avatar.png",
     gender: "Male",
+    password,
     education: "Full Stack Developer",
     address: "Bay Area, San Francisco, CA",
     socialMedia: {
@@ -57,7 +58,7 @@ export function createProfile(firstName, lastName, email) {
       },
       {
         name: "Website Markup",
-        skillRate: "40%", 
+        skillRate: "40%",
       },
       {
         name: "One Page",

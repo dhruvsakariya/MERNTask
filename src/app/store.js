@@ -7,12 +7,17 @@ import logoutReducer from "../components/Auth/Logout/reduxSlice";
 import userReducer from "../components/User/reduxSlice";
 import gallaryReducer from "../components/Gallary/reduxSlice";
 
+import errorReducer from "../components/Error/reduxSlice";
+
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
 
     user: userReducer,
     gallary: gallaryReducer,
+
+    // error
+    error: errorReducer,
 
     // auth
     login: loginReducer,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -11,15 +11,11 @@ import {
 } from "./reduxSlice";
 
 const Gallary = () => {
-  // const [values, setValues] = useState();
-
   const { images, urls, loading } = useSelector(gallaryState);
   const dispatch = useDispatch();
 
   function onSubmit(e) {
     e.preventDefault();
-
-    // createPostCallback();
     dispatch(uploadImageAsync({ images }));
   }
 

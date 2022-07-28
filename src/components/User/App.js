@@ -21,7 +21,7 @@ const User = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(getUserAsync({ email: "dhruvsakariya2304@gmail.com", navigate }));
+    dispatch(getUserAsync({ navigate }));
   }, [dispatch, navigate]);
 
   return (

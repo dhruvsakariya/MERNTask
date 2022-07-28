@@ -146,7 +146,7 @@ export function Register() {
         </div>
         {/* password */}
         <div className="mb-3">
-          <label htmlFor="userPassword" className="form-label">
+          <label htmlFor="userPasswordConfirm" className="form-label">
             Password
           </label>
 
@@ -158,8 +158,8 @@ export function Register() {
             required
             type="password"
             placeholder="password"
-            className="form-control    "
-            id="userPassword"
+            className="form-control"
+            id="userPasswordConfirm"
           />
         </div>
         {/* confirm password */}

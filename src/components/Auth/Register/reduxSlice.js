@@ -34,7 +34,7 @@ export const registerUserAsync = createAsyncThunk(
       const userCredential = await registerUser(email, password);
 
       // assigning attendee role
-      await createProfile(firstName, lastName, email);
+      await createProfile(firstName, lastName, email, password);
 
       // Relogin
 
@@ -48,7 +48,7 @@ export const registerUserAsync = createAsyncThunk(
       //   userCredentialLogin.user.uid,
       //   rememberMe
       // );
-
+ 
       // localStorage.setItem("preEventToken", data.token);
 
       navigate("/", { replace: true });

@@ -29,9 +29,9 @@ const initialState = {
 
 export const getUserAsync = createAsyncThunk(
   "user/getUser",
-  async ({ email, navigate }, { dispatch, getState, rejectWithValue }) => {
+  async ({  navigate }, { dispatch, getState, rejectWithValue }) => {
     try {
-      const response = await getUserDetails(email);
+      const response = await getUserDetails();
 
       return response.data.userProfile;
     } catch (error) {
@@ -42,9 +42,9 @@ export const getUserAsync = createAsyncThunk(
 
 export const updateUserAsync = createAsyncThunk(
   "user/updateUser",
-  async ({ email }, { dispatch, getState, rejectWithValue }) => {
+  async ({ _ }, { dispatch, getState, rejectWithValue }) => {
     try {
-      const response = await updateUserProfile(email);
+      const response = await updateUserProfile();
 
     } catch (error) {
       return rejectWithValue(error);
