@@ -32,7 +32,7 @@ import { setIsAuth } from "../User/reduxSlice";
 export default function NavbarComponent() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isAuth } = useSelector(userState);
+  const { isAuth, profileUrl } = useSelector(userState);
 
   const dropDownHandler = (event, navigateStr) => {
     event.preventDefault();
@@ -57,11 +57,7 @@ export default function NavbarComponent() {
               id="userNavigation"
             >
               <img
-                src={
-                  isAuth
-                    ? "https://www.w3schools.com/howto/img_avatar.png"
-                    : avatar
-                }
+                src={isAuth ? profileUrl : avatar}
                 width="35"
                 draggable="false"
                 height="35"
