@@ -1,8 +1,11 @@
 import axios from "axios";
 
-const baseURL = "https://merntaskserve.herokuapp.com/";
-// http://localhost:4000/
-// https://merntaskserve.herokuapp.com/
+let baseURL = "https://merntaskserve.herokuapp.com/";
+
+if (window.location.hostname === "localhost") {
+  baseURL = "http://localhost:4000/";
+}
+
 const axiosInstance = axios.create({
   baseURL: baseURL,
   headers: {
