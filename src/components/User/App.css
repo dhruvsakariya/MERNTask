@@ -1,0 +1,12 @@
+.profile_section input {
+  background-color: #eaeaea57;
+  border: 1px solid #d4d4d4;
+
+  border-radius: 4px;
+  padding: 4px;
+  text-align: center;
+}
+
+.profile_section input:active {
+  border: 1px solid black;
+}

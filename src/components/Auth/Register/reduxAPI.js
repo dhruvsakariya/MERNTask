@@ -21,45 +21,45 @@ export function registerUser(firstName, lastName, email, password) {
     Skills: [
       {
         name: "Web Design",
-        skillRate: "30%",
+        skillRate: "80%",
       },
       {
         name: "Website Markup",
-        skillRate: "40%",
+        skillRate: "87%",
       },
       {
         name: "One Page",
-        skillRate: "50%",
+        skillRate: "75%",
       },
       {
         name: "Mobile Template",
-        skillRate: "60%",
+        skillRate: "85%",
       },
       {
         name: "Backend API",
-        skillRate: "70%",
+        skillRate: "82%",
       },
     ],
     Hobbies: [
       {
         name: "Web Design",
-        skillRate: "50%",
+        skillRate: "72%",
       },
       {
         name: "Website Markup",
-        skillRate: "40%",
+        skillRate: "78%",
       },
       {
         name: "One Page",
-        skillRate: "30%",
+        skillRate: "88%",
       },
       {
         name: "Mobile Template",
-        skillRate: "20%",
+        skillRate: "69%",
       },
       {
         name: "Backend API",
-        skillRate: "10%",
+        skillRate: "90%",
       },
     ],
   });

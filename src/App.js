@@ -22,7 +22,14 @@ function App() {
           dispatch(setIsAuth({ isAuth: true, token: TokenBoth }));
         } catch (error) {}
       } else {
-        // navigate("/login");
+        if (
+          !(
+            window.location.pathname === "/login" ||
+            window.location.pathname === "/register"
+          )
+        ) {
+          navigate("/login");
+        }
       }
     };
     autoLogin();

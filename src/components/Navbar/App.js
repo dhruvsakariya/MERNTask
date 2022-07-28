@@ -46,6 +46,7 @@ export default function NavbarComponent() {
         localStorage.removeItem("loginToken");
         dispatch(setIsAuth({ isAuth: false, token: null }));
         navigate("/login");
+        window.location.reload();
       };
       return (
         <Nav className="flex-row me-0">
