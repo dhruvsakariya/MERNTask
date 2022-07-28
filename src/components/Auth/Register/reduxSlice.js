@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { registerUser, createProfile } from "./reduxAPI";
 import { pushErrorNotification } from "../../Error/reduxSlice";
-import { setUserAvl } from "../../User/reduxSlice";
+import { setIsAuth } from "../../User/reduxSlice";
 import { loginUser, rememberAfterLogin } from "../Login/reduxAPI";
 
 // icon
@@ -31,46 +31,46 @@ export const registerUserAsync = createAsyncThunk(
   ) => {
     try {
       // create user
-      const userCredential = await registerUser(email, password);
-
-      // assigning attendee role
-      await createProfile(firstName, lastName, email, password);
+      const userCredential = await registerUser(
+        firstName,
+        lastName,
+        email,
+        password
+      );
 
       // Relogin
 
       // const userCredentialLogin = await loginUser(email, password);
       // const user = userCredentialLogin.user;
       // if (user) {
-      //   dispatch(setUserAvl({ userAvl: true }));
+      //   dispatch(setIsAuth({ isAuth: true }));
       // }
 
       // const { data } = await rememberAfterLogin(
       //   userCredentialLogin.user.uid,
       //   rememberMe
       // );
- 
+
       // localStorage.setItem("preEventToken", data.token);
 
-      navigate("/", { replace: true });
+      navigate("/login", { replace: true });
     } catch (error) {
-      if (error.name === "FirebaseError") {
-        dispatch(
-          pushErrorNotification({
-            notify: {
-              iconifyIconLink: (
-                <Icon icon="bx:notification" className="rounded" />
-              ),
-              errorTitle: error.code,
-              errorMessage: error.message,
-              theme: "danger",
-              time: "now",
-              autoHideTime: 3000,
-              statusCode: 200,
-              show: true,
-            },
-          })
-        );
-      }
+      dispatch(
+        pushErrorNotification({
+          notify: {
+            iconifyIconLink: (
+              <Icon icon="bx:notification" className="rounded" />
+            ),
+            errorTitle: error.code,
+            errorMessage: error.response.data.message,
+            theme: "danger",
+            time: "now",
+            autoHideTime: 3000,
+            statusCode: 200,
+            show: true,
+          },
+        })
+      );
       return rejectWithValue(error);
     }
   }

@@ -6,7 +6,8 @@ import { getUserDetails, updateUserProfile } from "./reduxAPI";
 
 const initialState = {
   loading: false,
-  userAvl: false,
+  isAuth: false,
+  token: null,
 
   firstName: "",
   lastName: "",
@@ -29,7 +30,7 @@ const initialState = {
 
 export const getUserAsync = createAsyncThunk(
   "user/getUser",
-  async ({  navigate }, { dispatch, getState, rejectWithValue }) => {
+  async ({ navigate }, { dispatch, getState, rejectWithValue }) => {
     try {
       const response = await getUserDetails();
 
@@ -45,7 +46,6 @@ export const updateUserAsync = createAsyncThunk(
   async ({ _ }, { dispatch, getState, rejectWithValue }) => {
     try {
       const response = await updateUserProfile();
-
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -57,8 +57,13 @@ export const userSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    setUserAvl: (state, action) => {
-      state.userAvl = action.payload.userAvl;
+    setIsAuth: (state, action) => {
+      state.isAuth = action.payload.isAuth;
+
+      if (action.payload.token) {
+        state.token = action.payload.token;
+      }
+
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
@@ -85,8 +90,6 @@ export const userSlice = createSlice({
         state.socialMedia = action.payload.socialMedia;
         state.Hobbies = action.payload.Hobbies;
         state.Skills = action.payload.Skills;
-
-      
       })
       .addCase(getUserAsync.rejected, (state, action) => {
         state.loading = false;
@@ -103,7 +106,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUserAvl } = userSlice.actions;
+export const { setIsAuth } = userSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

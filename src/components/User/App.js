@@ -162,8 +162,8 @@ const User = () => {
                         <i className="fa-solid fa-person-dots-from-line mx-2 "></i>{" "}
                         Hobbies
                       </p>
-                      {Hobbies?.map(({ name, skillRate }) => (
-                        <>
+                      {Hobbies?.map(({ name, skillRate }, index) => (
+                        <div key={index}>
                           <p
                             className="mt-4 mb-1"
                             style={{ fontSize: ".77rem" }}
@@ -183,7 +183,7 @@ const User = () => {
                               aria-valuemax="100"
                             ></div>
                           </div>
-                        </>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -195,8 +195,8 @@ const User = () => {
                         <i className="fa-solid fa-kitchen-set mx-2 "></i> Skills
                       </p>
 
-                      {Skills?.map(({ name, skillRate }) => (
-                        <>
+                      {Skills?.map(({ name, skillRate }, index) => (
+                        <div key={index}>
                           <p
                             className="mt-4 mb-1"
                             style={{ fontSize: ".77rem" }}
@@ -216,7 +216,7 @@ const User = () => {
                               aria-valuemax="100"
                             ></div>
                           </div>
-                        </>
+                        </div>
                       ))}
                     </div>
                   </div>

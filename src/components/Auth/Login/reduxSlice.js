@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { loginUser, rememberAfterLogin } from "./reduxAPI";
+import { loginUser } from "./reduxAPI";
 import { pushErrorNotification } from "../../Error/reduxSlice";
-import { setUserAvl } from "../../User/reduxSlice";
+import { setIsAuth } from "../../User/reduxSlice";
 
 // icon
 import { Icon } from "@iconify/react";
@@ -27,38 +27,32 @@ export const loginUserAsync = createAsyncThunk(
   ) => {
     try {
       const { rememberMe } = getState().login;
-      const userCredential = await loginUser(email, password);
-      const user = userCredential.user;
+      const response = await loginUser(email, password, rememberMe);
+
+      const user = response.data.userId;
       if (user) {
-        dispatch(setUserAvl({ userAvl: true }));
+        dispatch(setIsAuth({ isAuth: true, token: response.data.token }));
       }
 
-      const { data } = await rememberAfterLogin(
-        userCredential.user.uid,
-        rememberMe
-      );
-
-      localStorage.setItem("preEventToken", data.token);
+      localStorage.setItem("loginToken", response.data.token);
       navigate("/", { replace: true });
     } catch (error) {
-      if (error.name === "FirebaseError") {
-        dispatch(
-          pushErrorNotification({
-            notify: {
-              iconifyIconLink: (
-                <Icon icon="bx:notification" className="rounded" />
-              ),
-              errorTitle: error.code,
-              errorMessage: error.message,
-              theme: "danger",
-              time: "now",
-              autoHideTime: 3000,
-              statusCode: 200,
-              show: true,
-            },
-          })
-        );
-      }
+      dispatch(
+        pushErrorNotification({
+          notify: {
+            iconifyIconLink: (
+              <Icon icon="bx:notification" className="rounded" />
+            ),
+            errorTitle: error.code,
+            errorMessage: error.response.data.message,
+            theme: "danger",
+            time: "now",
+            autoHideTime: 3000,
+            statusCode: 200,
+            show: true,
+          },
+        })
+      );
       return rejectWithValue(error);
     }
   }

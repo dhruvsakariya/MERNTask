@@ -1,18 +1,9 @@
-// Promise
-// fetch request ( to laravel )
-// axios request ( get , post , put , patch ...)
-// firestore requests
-// cloud function requests
 
 import axios from "../../../axios/axiosInstance";
 
-export function registerUser(email, password) {
-  // return createUserWithEmailAndPassword(auth, email, password);createProfile
-  return;
-}
-
-export function createProfile(firstName, lastName, email, password) {
-  return axios.post("/user/createProfile", {
+const token = localStorage.getItem("loginToken");
+export function registerUser(firstName, lastName, email, password) {
+  return axios.put("/user/signup", {
     email,
     firstName,
     lastName,
@@ -73,5 +64,6 @@ export function createProfile(firstName, lastName, email, password) {
         skillRate: "10%",
       },
     ],
-  });
+  },
+  { headers: { Authorization: `Bearer ${token}` } });
 }

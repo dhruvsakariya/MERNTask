@@ -133,7 +133,6 @@ export function Register() {
             <input
               type="email"
               value={email}
-              required
               onChange={(e) => {
                 dispatch(setEmail({ email: e.target.value }));
               }}
@@ -155,7 +154,6 @@ export function Register() {
             onChange={(e) => {
               dispatch(setPassword({ password: e.target.value }));
             }}
-            required
             type="password"
             placeholder="password"
             className="form-control"
@@ -170,7 +168,6 @@ export function Register() {
 
           <input
             value={confirmPassword}
-            required
             onChange={(e) => {
               dispatch(setConfirmPassword({ confirmPassword: e.target.value }));
             }}
@@ -180,7 +177,7 @@ export function Register() {
             id="userPassword"
           />
         </div>
-        <div className="mb-3 form-check">
+        <div className="mb-3 form-check d-none">
           <input
             checked={rememberMe}
             onChange={() => {

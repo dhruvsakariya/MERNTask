@@ -2,10 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Redux
-import { useDispatch } from "react-redux";
-// import { homePageState } from "../HomePage/reduxSlice";
-// import { userState } from "../User/reduxSlice";
-// import { logoutUserAsync } from "../auth/Logout/reduxSlice.js";
+import { useDispatch, useSelector } from "react-redux";
+import { userState } from "../User/reduxSlice";
 
 // other laibrary
 import { useNavigate } from "react-router-dom";
@@ -29,13 +27,12 @@ import "./App.css";
 // assets
 import logo from "../../assets/svg/logo.svg";
 import avatar from "../../assets/img/avatar.jpg";
+import { setIsAuth } from "../User/reduxSlice";
 
 export default function NavbarComponent() {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  //   const { userAvl } = useSelector(userState);
-
-  const userAvl = true;
+  const dispatch = useDispatch();
+  const { isAuth } = useSelector(userState);
 
   const dropDownHandler = (event, navigateStr) => {
     event.preventDefault();
@@ -43,10 +40,11 @@ export default function NavbarComponent() {
   };
 
   const ActionMenu = () => {
-    if (userAvl) {
+    if (isAuth) {
       const logoutHandler = (event) => {
         event.preventDefault();
-        // dispatch(logoutUserAsync());
+        localStorage.removeItem("loginToken");
+        dispatch(setIsAuth({ isAuth: false }));
         navigate("/login");
       };
       return (
@@ -58,7 +56,11 @@ export default function NavbarComponent() {
               id="userNavigation"
             >
               <img
-                src={avatar}
+                src={
+                  isAuth
+                    ? "https://www.w3schools.com/howto/img_avatar.png"
+                    : avatar
+                }
                 width="35"
                 draggable="false"
                 height="35"
@@ -108,10 +110,10 @@ export default function NavbarComponent() {
     } else {
       return (
         <Nav className="flex-row me-0">
-          <Link to="/login" className="px-3 ">
+          <Link to="/login" className="px-3 text-secondary ">
             Login
           </Link>
-          <Link to="/register" className="px-3 ">
+          <Link to="/register" className="px-3 text-secondary ">
             Register
           </Link>
         </Nav>

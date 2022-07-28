@@ -46,7 +46,7 @@ export function Login() {
           </label>
           <input
             type="email"
-            required
+            
             value={email}
             onChange={(e) => {
               dispatch(setEmail({ email: e.target.value }));
@@ -71,7 +71,7 @@ export function Login() {
           </a>
           <input
             value={password}
-            required
+            
             onChange={(e) => {
               dispatch(setPassword({ password: e.target.value }));
             }}
