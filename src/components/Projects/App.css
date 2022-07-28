@@ -13,7 +13,9 @@
 /*--------------------------------------------------------------
   # Sections & Section Header
   --------------------------------------------------------------*/
-
+  .gallery-item img{
+    width: 100% !important;
+}
 .homePageWrapper {
   background-color: #f8f9fa;
 }
